@@ -12,20 +12,11 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials.map(sentence => {
-    return sentence.split(' ').map((word, index) => {
-      // Special cases
-      if (word.toLowerCase() === 'oo') return 'OO';
-      if (word.toLowerCase() === 'api') return 'API';
-      if (word.toLowerCase() === 'nan') return 'NaN';
-      if (word.toLowerCase() === 'jsonp') return 'JSONP';
-      
-      // Handle StopPropagation and PreventDefault
-      if (word.toLowerCase() === 'stoppropagation') return 'StopPropagation';
-      if (word.toLowerCase() === 'preventdefault') return 'preventDefault';
-      
-      // Capitalize first letter of each word
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    }).join(' ');
-  });
+
+ return tutorials.map((tutorial) =>
+    tutorial
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ")
+  );
 };
